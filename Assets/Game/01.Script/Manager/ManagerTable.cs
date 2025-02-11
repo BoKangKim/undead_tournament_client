@@ -29,6 +29,21 @@ public class ManagerTable : MonoBehaviour
             return cardManager;
         }
     }
+
+    public static MapManager MapManager
+    {
+        get
+        {
+            if (mapManager == null)
+            {
+                mapManager = FindObjectOfType<MapManager>();
+            }
+
+            return mapManager;
+        }
+    }
+
     private static PlayerManager playerManager;
     private static CardManager cardManager;
+    private static MapManager mapManager;
 }

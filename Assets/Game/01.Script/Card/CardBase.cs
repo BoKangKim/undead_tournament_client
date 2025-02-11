@@ -18,6 +18,7 @@ public class CardData
     [SerializeField] private string name;
     [SerializeField] private int damage;
     [SerializeField] private int energy;
+    [SerializeField] private bool[] arrangeArray;
     private bool[,] arrange = new bool[3, 3];
 
     public string Name => name;
@@ -27,6 +28,7 @@ public class CardData
     public virtual void Parse(string json)
     {
         // type + name 으로 해당 카드 스프라이트, 이펙트 찾기
+        Util.ConvertToTwoDimensionalArray(3, 3, arrangeArray, out arrange);
     }
 }
 
@@ -34,9 +36,10 @@ public abstract class CardBase : MonoBehaviour
 {
     [SerializeField] private Image img;
     [SerializeField] private Button cardButton;
-    [SerializeField] private CardData data = null;
+    [SerializeField] protected CardData data = null;
 
     public abstract void Logic(Unit unit);
+    public abstract bool CanPick();
 
     public virtual void ViewUpdate()
     {
@@ -51,4 +54,5 @@ public abstract class CardBase : MonoBehaviour
         data = new CardData();
         data.Parse(json);
     }
+
 }

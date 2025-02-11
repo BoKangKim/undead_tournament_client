@@ -8,4 +8,9 @@ public class AttackCard : CardBase
     {
         LogUtil.Log($"Attack");
     }
+
+    public override bool CanPick()
+    {
+        return false;
+    }
 }

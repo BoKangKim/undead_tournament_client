@@ -8,4 +8,9 @@ public class HealCard : CardBase
     {
         LogUtil.Log($"Heal");
     }
+
+    public override bool CanPick()
+    {
+        return false;
+    }
 }
