@@ -44,10 +44,15 @@ public class Unit : MonoBehaviour
     [SerializeField] private UnitData unitData;
     public UnitData UnitData => unitData;
 
+    public bool IsDeath => unitData.Health <= 0;
+
     #region TEST CODE
     [SerializeField] private int playIndex;
 
 #if UNITY_EDITOR
+    [SerializeField] private bool isMine = true;
+    public bool IsMine => isMine;
+
     [ContextMenu("PLAY")]
     private void Play()
     {
@@ -84,5 +89,10 @@ public class Unit : MonoBehaviour
     {
         int health = unitData.Health + healAmount;
         unitData.SetHealth(health);
+    }
+
+    public void Damage(int damageAmount)
+    {
+        //Health 다운
     }
 }
