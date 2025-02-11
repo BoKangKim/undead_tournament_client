@@ -6,7 +6,7 @@ public class HealCard : CardBase
 {
     public override void Logic(Unit unit)
     {
-        LogUtil.Log($"Heal");
+        unit.Heal(data.Damage);
     }
 
     public override bool CanPick()

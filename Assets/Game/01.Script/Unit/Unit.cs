@@ -12,6 +12,8 @@ public class UnitData
     [SerializeField] private int curWidthIndex = 0;
     [SerializeField] private int curHeightIndex = 0;
 
+    private int maxHealth = 100;
+
     public int CurWidthIndex => curWidthIndex;
     public int CurHeightIndex => curHeightIndex;
 
@@ -22,6 +24,16 @@ public class UnitData
     {
         this.curWidthIndex = x;
         this.curHeightIndex = y;
+    }
+
+    public void SetHealth(int health)
+    {
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        this.health = health;
     }
 }
 
@@ -66,5 +78,11 @@ public class Unit : MonoBehaviour
     public void Move(int x, int y)
     {
         unitData.SetIndex(x, y);
+    }
+
+    public void Heal(int healAmount)
+    {
+        int health = unitData.Health + healAmount;
+        unitData.SetHealth(health);
     }
 }
