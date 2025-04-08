@@ -14,8 +14,6 @@ public static class AutoCardGenerator
     [MenuItem("Tools/Card/Generate All Cards")]
     public static void GenerateCard()
     {
-
-
         // CardBase를 상속한 모든 클래스 찾기
         var derivedTypes = TypeCache.GetTypesDerivedFrom<CardBase>()
             .Where(t => !t.IsAbstract && !t.IsGenericType);

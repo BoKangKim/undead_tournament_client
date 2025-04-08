@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Player;
 using UnityEngine;
 
 namespace Game.Card
@@ -12,14 +13,15 @@ namespace Game.Card
 
     public abstract class CardBase : ScriptableObject
     {
-        [SerializeField] private int cost;
-        protected CardPath cardPath;
-        protected string cardName;
+        [SerializeField] protected int cost;
+        [SerializeField] protected CardPath cardPath;
+        [SerializeField] protected string cardName;
 
+        public int Cost => cost;
         public CardPath CardPath => cardPath;
         public string CardName => cardName;
 
-        public abstract void Activate();
+        public abstract void Activate(PlayerController owner, Unit unit);
         public abstract void Generate();
     }
 }
