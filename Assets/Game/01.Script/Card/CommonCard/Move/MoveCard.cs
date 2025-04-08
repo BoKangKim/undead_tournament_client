@@ -42,6 +42,9 @@ namespace Game.Card
                 case MoveType.DoubleLeft:
                     break;
             }
+
+            // 유닛의 Viewing 실행
+            unit.Move();
         }
     }
 }
