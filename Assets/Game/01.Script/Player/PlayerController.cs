@@ -8,9 +8,17 @@ namespace Game.Player
     // 유닛 데이터, 카드 데이터 관리
     public class PlayerController : MonoBehaviour
     {
-        private Unit unit = null;
-        private CardBase[] pickedCards = new CardBase[3];
-        private (int x, int y) curCell = (0, 0);
+        [SerializeField] private Unit unit = null;
+        [SerializeField] private CardBase[] pickedCards; //= new CardBase[3];
+        [SerializeField] private int testIndex = 0;
+        private (int x, int y) curCell = (0, 1);
+        public (int x, int y) CurCell => curCell;
+
+        [ContextMenu("Active")]
+        public void TestActive()
+        {
+            ActiveCard(testIndex);
+        }
 
         public void ActiveCard(int index)
         {
@@ -20,6 +28,12 @@ namespace Game.Player
             }
 
             pickedCards[index].Activate(this, unit);
+        }
+
+        public void ChangeCell(int x, int y)
+        {
+            this.curCell.x = x;
+            this.curCell.y = y;
         }
     }
 }

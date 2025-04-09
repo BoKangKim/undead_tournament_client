@@ -15,3 +15,4 @@ MonoBehaviour:
   cost: 0
   cardPath: 0
   cardName: MoveDown
+  moveType: 3
