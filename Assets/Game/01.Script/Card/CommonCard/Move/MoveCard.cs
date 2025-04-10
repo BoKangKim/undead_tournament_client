@@ -65,9 +65,7 @@ namespace Game.Card
             // 지금은 바로 옮기지만 Unit이 정해지면 러프하게 -> 애니메이션이랑 동기화
             unit.transform.position = (Vector3)targetPos;
             owner.ChangeCell(unitWidthIndex, unitHeightIndex);
-
-            // 유닛의 Viewing 실행
-            unit.Move();
+            owner.OnMove();
         }
     }
 }

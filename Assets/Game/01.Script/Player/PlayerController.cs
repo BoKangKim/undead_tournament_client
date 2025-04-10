@@ -57,6 +57,11 @@ namespace Game.Player
             this.curCell.y = y;
         }
 
+        public void OnMove()
+        {
+            unit.Move();
+        }
+
         public void OnUseMana(int amount)
         {
             unitData.UseMana(amount);
