@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Map;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
@@ -7,15 +8,23 @@ public class MapManager : MonoBehaviour
     [SerializeField] private bool convertOnAwake = true;
     [SerializeField] private int width;
     [SerializeField] private int height;
-    [SerializeField] private Transform[] cellArray;
+    [SerializeField] private Cell[] cellArray;
 
-    private Transform[,] resultCellArray = null;
+    private Cell[,] resultCellArray = null;
 
     private void Awake()
     {
         if (convertOnAwake)
         {
-            Util.ConvertToTwoDimensionalArray<Transform>(width, height, cellArray, out resultCellArray);
+            Util.ConvertToTwoDimensionalArray<Cell>(width, height, cellArray, out resultCellArray);
+
+            for (int y = 0; y < resultCellArray.GetLength(0); y++)
+            {
+                for (int x = 0; x < resultCellArray.GetLength(1); x++)
+                {
+                    resultCellArray[y, x].Init(x, y);
+                }
+            }
         }
     }
 
@@ -42,6 +51,6 @@ public class MapManager : MonoBehaviour
             return null;
         }
 
-        return resultCellArray[y, x].position;
+        return resultCellArray[y, x].transform.position;
     }
 }

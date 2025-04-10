@@ -8,6 +8,7 @@ namespace Game.Card
     public enum CardPath
     {
         Common,
+        TESTUNIT,
     }
 
     public abstract class CardBase : ScriptableObject
