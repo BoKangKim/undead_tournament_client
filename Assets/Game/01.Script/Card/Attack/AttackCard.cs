@@ -32,6 +32,8 @@ namespace Game.Card
                     Attack(owner, i);
                 }
             }
+
+            owner.OnUseMana(cost);
         }
 
         private void Attack(PlayerController owner, int index)

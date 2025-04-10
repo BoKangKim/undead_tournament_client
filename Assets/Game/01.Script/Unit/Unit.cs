@@ -16,5 +16,21 @@ namespace Game.Player
             // 애니메이션 재생
             onEndAction?.Invoke();
         }
+
+        public void Attack()
+        {
+            // 공격 이펙트 및 애니메이션
+            onEndAction?.Invoke();
+        }
+
+        public void OnDamage()
+        {
+            // 피격 애니메이션
+        }
+
+        public void OnDeath()
+        {
+            // 죽음 애니메이션
+        }
     }
 }

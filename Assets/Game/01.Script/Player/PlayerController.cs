@@ -57,9 +57,23 @@ namespace Game.Player
             this.curCell.y = y;
         }
 
+        public void OnUseMana(int amount)
+        {
+            unitData.UseMana(amount);
+        }
+
         public void OnDamage(int amount)
         {
-            unitData.Damage(amount);
+            bool isDeath = unitData.Damage(amount);
+
+            if (isDeath)
+            {
+                unit.OnDeath();
+            }
+            else
+            {
+                unit.OnDamage();
+            }
         }
     }
 }

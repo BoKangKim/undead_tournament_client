@@ -20,9 +20,22 @@ namespace Game.Data
             this.mana = mana;
         }
 
-        public void Damage(int amount)
+        public bool Damage(int amount)
         {
+            bool isDeath = false;
             hp -= amount;
+
+            if (hp <= 0)
+            {
+                isDeath = true;
+            }
+
+            return isDeath;
+        }
+
+        public void UseMana(int amount)
+        {
+            this.mana -= amount;
         }
     }
 }
