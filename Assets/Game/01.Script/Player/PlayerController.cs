@@ -21,7 +21,6 @@ namespace Game.Player
 
         // Card (Logic)
         private CardBase[] pickedCards; //= new CardBase[3];
-        private int testIndex = 0;
 
         private (int x, int y) curCell = (0, 1);
         public (int x, int y) CurCell => curCell;
