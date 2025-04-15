@@ -1,3 +1,6 @@
+# Notice
+- 에셋 저작권 이슈로 인하여 리소스, 프리팹은 따로 관리합니다.
+
 # undead_tournament_client
 - notion link (Still being edited)
 - https://www.notion.so/18ed5d960fb0808e99ecfaad5b887a22?pvs=4
