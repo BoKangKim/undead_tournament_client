@@ -13,13 +13,13 @@ namespace Game.UI
 
         public virtual void Open()
         {
-            canvasGroup.alpha = 0f;
+            canvasGroup.alpha = 1f;
             isOpened = true;
         }
 
         public virtual void Close()
         {
-            canvasGroup.alpha = 1f;
+            canvasGroup.alpha = 0f;
             isOpened = false;
         }
 

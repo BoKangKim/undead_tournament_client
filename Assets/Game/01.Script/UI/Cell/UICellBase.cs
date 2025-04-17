@@ -15,6 +15,7 @@ namespace Game.UI
         public virtual void Init(CellData data = null)
         {
             this.data = data;
+            UpdateView(data);
         }
 
         public abstract void UpdateView(CellData data = null);
